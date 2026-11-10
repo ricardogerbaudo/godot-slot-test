@@ -41,9 +41,9 @@ jobs:
       - name: Export web build
         run: |
           mkdir -p build
-          $GODOT --headless --import
-          $GODOT --headless --export-release "Web" build/index.html
-          rsync -a --exclude .gdignore csharp/ build/csharp/
+          $GODOT --headless --path gdscript --import
+          $GODOT --headless --path gdscript --export-release "Web" "$PWD/build/index.html"
+          rsync -a --exclude .gdignore csharp-build/ build/csharp/
 
       - uses: actions/configure-pages@v6
 
