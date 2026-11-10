@@ -43,6 +43,7 @@ jobs:
           mkdir -p build
           $GODOT --headless --import
           $GODOT --headless --export-release "Web" build/index.html
+          rsync -a --exclude .gdignore csharp/ build/csharp/
 
       - uses: actions/configure-pages@v6
 
