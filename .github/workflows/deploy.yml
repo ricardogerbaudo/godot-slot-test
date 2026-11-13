@@ -44,6 +44,7 @@ jobs:
           $GODOT --headless --path gdscript --import
           $GODOT --headless --path gdscript --export-release "Web" "$PWD/build/index.html"
           rsync -a --exclude .gdignore csharp-build/ build/csharp/
+          rsync -a kemet-build/ build/kemet/
 
       - uses: actions/configure-pages@v6
 
